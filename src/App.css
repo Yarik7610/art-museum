@@ -140,12 +140,29 @@ main {
   }
 }
 
+main {
+  padding: 100px 0;
+  .main__content {
+    width: 70%;
+    margin: 0 auto 0 auto;
+  }
+}
 .not-found {
   height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.big-heading {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 700;
+  color: #393939;
+  span {
+    color: #f17900;
+  }
 }
 
 .bookmark-btn {

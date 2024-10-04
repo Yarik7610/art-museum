@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import App from "./App"
 import "./index.css"
 import { Favourites } from "./pages/Favourites"
+import { Home } from "./pages/Home"
 import { NotFound } from "./pages/NotFound"
 import { Painting } from "./pages/Painting"
 import reportWebVitals from "./reportWebVitals"
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <NotFound />,
     children: [
+      {
+        path: "/",
+        element: <Home />
+      },
       {
         path: "/favourites",
         element: <Favourites />
