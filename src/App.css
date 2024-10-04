@@ -1,14 +1,21 @@
-header {
-  background: linear-gradient(90deg, #343333 38.05%, #484848 69.22%, #282828 98.98%);
+header,
+footer {
   height: 125px;
   display: flex;
   align-items: center;
   justify-content: center;
-  .header__content {
+  .header__content,
+  .footer__content {
     display: flex;
     justify-content: space-between;
     max-width: 1280px;
     width: 65%;
+  }
+}
+
+header {
+  background: linear-gradient(90deg, #343333 38.05%, #484848 69.22%, #282828 98.98%);
+  .header__content {
     .header__nav {
       color: white;
       display: flex;
@@ -25,4 +32,13 @@ header {
       }
     }
   }
+}
+
+footer {
+  background: white;
+}
+
+main {
+  background-color: #fafafa;
+  height: 900px;
 }
