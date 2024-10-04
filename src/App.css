@@ -40,13 +40,13 @@ footer {
 
 main {
   background-color: #fafafa;
-  padding: 100px 0;
+  padding: 110px 0;
   .main__content {
     display: flex;
     flex-direction: column;
     gap: 60px;
     align-items: center;
-    width: 1280px;
+    max-width: 1280px;
     margin: 0 auto 0 auto;
   }
 }
@@ -57,6 +57,7 @@ main {
   height: 130px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 15px;
   padding: 15px;
   &.short {
@@ -89,11 +90,17 @@ main {
   }
 }
 
+.home-section {
+  .section-heading {
+    margin-bottom: 30px;
+  }
+}
 .painting-cards {
   .painting-cards__section {
     display: flex;
     justify-content: space-between;
     gap: 50px;
+    flex-wrap: wrap;
   }
   .pagination {
     margin-top: 20px;
@@ -195,6 +202,12 @@ main {
     top: 50%;
     transform: translateY(-50%);
   }
+}
+
+.other-paintings {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(415px, 1fr));
+  gap: 20px;
 }
 
 .bookmark-btn {
