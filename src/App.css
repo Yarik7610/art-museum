@@ -43,7 +43,7 @@ main {
   height: 900px;
 }
 
-.painting-article {
+.painting-short-info {
   background-color: white;
   border: 1px solid #f0f1f1;
   width: 415px;
@@ -52,30 +52,49 @@ main {
   justify-content: space-between;
   gap: 15px;
   padding: 15px;
-  .painting-article__image {
+  &.short {
+    width: 335px;
+  }
+  .painting-short-info__image {
     display: block;
     width: 80px;
     height: 80px;
   }
   div {
     margin-right: auto;
-    .painting-article__name {
+    .painting-short-info__name {
       width: 210px;
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
     }
-    .painting-article__author {
+    .painting-short-info__author {
       text-overflow: ellipsis;
       margin-top: 5px;
       color: #e0a449;
       font-weight: 300;
     }
-    .painting-article__status {
+    .painting-short-info__status {
       color: #393939;
       font-weight: 600;
       margin-top: 15px;
     }
+  }
+}
+
+.painting-card {
+  width: 385px;
+  height: 445px;
+  .painting-card__image {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  .painting-card__short-info-wrap {
+    display: flex;
+    justify-content: center;
+    transform: translateY(-50%);
   }
 }
 
