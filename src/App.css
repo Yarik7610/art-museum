@@ -42,3 +42,49 @@ main {
   background-color: #fafafa;
   height: 900px;
 }
+
+.painting-article {
+  background-color: white;
+  border: 1px solid #f0f1f1;
+  width: 415px;
+  height: 130px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 15px;
+  .painting-article__image {
+    display: block;
+    width: 80px;
+    height: 80px;
+  }
+  div {
+    margin-right: auto;
+    .painting-article__name {
+      width: 210px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .painting-article__author {
+      text-overflow: ellipsis;
+      margin-top: 5px;
+      color: #e0a449;
+      font-weight: 300;
+    }
+    .painting-article__status {
+      color: #393939;
+      font-weight: 600;
+      margin-top: 15px;
+    }
+  }
+}
+
+.bookmark-btn {
+  background-color: #f9f9f9;
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
