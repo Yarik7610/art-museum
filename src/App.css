@@ -40,9 +40,16 @@ footer {
 
 main {
   background-color: #fafafa;
-  height: 900px;
+  padding: 100px 0;
+  .main__content {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    align-items: center;
+    width: 1280px;
+    margin: 0 auto 0 auto;
+  }
 }
-
 .painting-short-info {
   background-color: white;
   border: 1px solid #f0f1f1;
@@ -82,14 +89,25 @@ main {
   }
 }
 
+.painting-cards {
+  .painting-cards__section {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+  }
+  .pagination {
+    margin-top: 20px;
+  }
+}
+
 .painting-card {
   width: 385px;
-  height: 445px;
+  max-height: 510px;
   .painting-card__image {
     display: block;
     object-fit: cover;
     width: 100%;
-    height: 100%;
+    height: 445px;
   }
   .painting-card__short-info-wrap {
     display: flex;
@@ -115,6 +133,7 @@ main {
 
 .pagination {
   display: flex;
+  justify-content: end;
   gap: 10px;
   .pagination__controller,
   .pagination__btn {
@@ -140,17 +159,6 @@ main {
   }
 }
 
-main {
-  padding: 100px 0;
-  .main__content {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    align-items: center;
-    width: 70%;
-    margin: 0 auto 0 auto;
-  }
-}
 .not-found {
   height: 100vh;
   width: 100vw;
