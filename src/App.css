@@ -98,6 +98,21 @@ main {
   }
 }
 
+.section-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  p {
+    color: #e0a449;
+  }
+  h2 {
+    color: #393939;
+    font-weight: 500;
+    font-size: 32px;
+  }
+}
+
 .bookmark-btn {
   background-color: #f9f9f9;
   width: 60px;

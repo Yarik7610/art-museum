@@ -1,4 +1,5 @@
 import bookmark from "../assets/bookmark.svg"
+
 export const BookmarkBtn = () => {
   return (
     <button className="bookmark-btn">

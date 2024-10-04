@@ -1,5 +1,6 @@
 import img from "../assets/fon.png"
 import { PaintingShortInfo } from "./PaintingShortInfo"
+
 export const PaintingCard = () => {
   return (
     <article className="painting-card">
