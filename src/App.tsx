@@ -1,8 +1,8 @@
 import { useState } from "react"
+import { Outlet } from "react-router-dom"
 import "./App.css"
 import { Footer } from "./components/Footer"
 import { Header } from "./components/Header"
-import { Pagination } from "./components/Pagination"
 
 function App() {
   const [currentPage, setCurrentPage] = useState(1)
@@ -10,7 +10,7 @@ function App() {
     <>
       <Header />
       <main>
-        <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} totalPaintingsCount={29} />
+        <Outlet />
       </main>
       <Footer />
     </>
