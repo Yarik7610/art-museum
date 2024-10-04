@@ -1,6 +1,6 @@
 import { Painting } from "../pages/Home"
+import { Loader } from "./Loader"
 import { Pagination } from "./Pagination"
-import { PaintingCard } from "./PaintingCard"
 
 interface PaintingsCardSectionProps {
   paintings: Painting[]
@@ -16,11 +16,12 @@ export const PaintingCardSection: React.FC<PaintingsCardSectionProps> = ({
 }) => {
   return (
     <div className="painting-cards">
-      <section className="painting-cards__section">
+      {/* <section className="painting-cards__section">
         {paintings.map((p) => (
           <PaintingCard />
         ))}
-      </section>
+      </section> */}
+      <Loader />
       <Pagination totalPaintingsCount={totalPaintingsCount} currentPage={currentPage} setCurrentPage={setCurrentPage} />
     </div>
   )

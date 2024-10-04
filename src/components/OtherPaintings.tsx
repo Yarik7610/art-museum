@@ -1,15 +1,16 @@
 import { Painting } from "../pages/Home"
-import { PaintingShortInfo } from "./PaintingShortInfo"
+import { Loader } from "./Loader"
 
 interface OtherPaintingsProps {
   otherPaintings: Painting[]
 }
 export const OtherPaintings: React.FC<OtherPaintingsProps> = ({ otherPaintings }) => {
   return (
-    <section className="other-paintings">
-      {otherPaintings.map((p) => (
-        <PaintingShortInfo withImg={true} />
-      ))}
-    </section>
+    // <section className="other-paintings">
+    //   {otherPaintings.map((p) => (
+    //     <PaintingShortInfo withImg={true} />
+    //   ))}
+    // </section>
+    <Loader />
   )
 }
