@@ -1,16 +1,16 @@
+import { useState } from "react"
 import "./App.css"
 import { Footer } from "./components/Footer"
 import { Header } from "./components/Header"
-import { PaintingCard } from "./components/PaintingCard"
-import { SectionHeading } from "./components/SectionHeading"
+import { Pagination } from "./components/Pagination"
 
 function App() {
+  const [currentPage, setCurrentPage] = useState(1)
   return (
     <>
       <Header />
       <main>
-        <SectionHeading text1="Topics for you" text2="Our special gallery" />
-        <PaintingCard />
+        <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} totalPaintingsCount={29} />
       </main>
       <Footer />
     </>

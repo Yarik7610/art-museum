@@ -113,6 +113,33 @@ main {
   }
 }
 
+.pagination {
+  display: flex;
+  gap: 10px;
+  .pagination__controller,
+  .pagination__btn {
+    border-radius: 5px;
+    border: 1px solid transparent;
+    &:hover {
+      border: 1px solid #f17900;
+    }
+  }
+  .pagination__controller {
+    padding: 5px;
+  }
+  .pagination__btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    color: #393939;
+    &.active {
+      pointer-events: none;
+      background-color: #f17900;
+      color: white;
+    }
+  }
+}
+
 .bookmark-btn {
   background-color: #f9f9f9;
   width: 60px;
