@@ -29,7 +29,7 @@ export const Home = () => {
       setPaintingsLoading(true)
       try {
         const response = await fetch(
-          `https://api.artic.edu/api/v1/artworks?fields=id,title,artist_display,date_start,date_end,image_id&limit=${PAGE_SIZE}&page=${currentPage}`
+          `https://api.artic.edu/api/v1/artworks/search?q=${query}&fields=id,title,artist_display,date_start,date_end,image_id&limit=${PAGE_SIZE}&page=${currentPage}`
         )
         const body = await response.json()
         setTotalPaintingsCount(body.pagination.total)
@@ -40,7 +40,7 @@ export const Home = () => {
       }
     }
     fetchPaintings()
-  }, [currentPage])
+  }, [currentPage, query])
 
   useEffect(() => {
     setOtherPaintingsLoading(true)
@@ -59,6 +59,7 @@ export const Home = () => {
     }
     fetchOtherPaintings()
   }, [])
+
   return (
     <>
       <h1 className="big-heading">
@@ -67,16 +68,13 @@ export const Home = () => {
       <Search query={query} setQuery={setQuery} />
       <section className="home-section">
         <SectionHeading text1="Topics for you" text2="Our special gallery" />
-        {paintingsLoading ? (
-          <Loader />
-        ) : (
-          <PaintingCardSection
-            currentPage={currentPage}
-            setCurrentPage={setCurrentPage}
-            totalPaintingsCount={totalPaintingsCount}
-            paintings={paintings}
-          />
-        )}
+        <PaintingCardSection
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          totalPaintingsCount={totalPaintingsCount}
+          paintings={paintings}
+          paintingsLoading={paintingsLoading}
+        />
       </section>
       <section className="home-section">
         <SectionHeading text1="Here some more" text2="Other works for you" />

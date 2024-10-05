@@ -226,6 +226,10 @@ main {
   justify-content: center;
   align-items: center;
 }
+.not-found-message {
+  padding: 30px 0;
+  text-align: center;
+}
 
 .big-heading {
   text-align: center;
@@ -293,6 +297,15 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid transparent;
+  &:hover {
+    border: 1px solid #f17900;
+  }
+  img {
+    display: block;
+    width: 24px;
+    height: 24px;
+  }
 }
 
 @media (max-width: 1400px) {
