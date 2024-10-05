@@ -8,7 +8,7 @@ interface PaintingShortInfoProps {
   painting: Painting
 }
 
-export const PaintingShortInfo = ({ withImg }: PaintingShortInfoProps) => {
+export const PaintingShortInfo = ({ withImg, painting }: PaintingShortInfoProps) => {
   return (
     <article className={`painting-short-info ${!withImg ? "short" : ""}`}>
       {withImg && (
