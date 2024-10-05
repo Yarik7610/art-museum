@@ -1,11 +1,13 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import burger from "../assets/burger.svg"
 import cross from "../assets/cross.svg"
 import logo from "../assets/logo.svg"
+import { useOutsideClick } from "../utils/useOutsideClick"
 import { HeaderLinks } from "./HeaderLinks"
 
 export const Header = () => {
   const [open, setOpen] = useState(false)
+  const mobileMenuRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
     if (open) document.body.classList.add("active")
@@ -14,6 +16,8 @@ export const Header = () => {
       document.body.classList.remove("active")
     }
   }, [open])
+
+  useOutsideClick(mobileMenuRef, () => setOpen(false))
 
   return (
     <header>
@@ -26,7 +30,7 @@ export const Header = () => {
           <button onClick={() => setOpen(true)} className="burger-btn">
             <img src={burger} alt="Burger icon"></img>
           </button>
-          <div className={`header__nav__mobile ${open ? "active" : ""}`}>
+          <div ref={mobileMenuRef} className={`header__nav__mobile ${open ? "active" : ""}`}>
             <button className="cross-btn" onClick={() => setOpen(false)}>
               <img src={cross} alt="Cross icon"></img>
             </button>{" "}
