@@ -1,4 +1,4 @@
-import fon from "../assets/fon.png"
+import fon from "#assets/fon.png"
 import { BookmarkBtn } from "./BookmarkBtn"
 
 interface PaintingShortInfoProps {

@@ -1,7 +1,7 @@
+import burger from "#assets/burger.svg"
+import cross from "#assets/cross.svg"
+import logo from "#assets/logo.svg"
 import { useEffect, useRef, useState } from "react"
-import burger from "../assets/burger.svg"
-import cross from "../assets/cross.svg"
-import logo from "../assets/logo.svg"
 import { useOutsideClick } from "../utils/useOutsideClick"
 import { HeaderLinks } from "./HeaderLinks"
 

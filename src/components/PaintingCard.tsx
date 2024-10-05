@@ -1,4 +1,4 @@
-import img from "../assets/fon.png"
+import img from "#assets/fon.png"
 import { PaintingShortInfo } from "./PaintingShortInfo"
 
 export const PaintingCard = () => {

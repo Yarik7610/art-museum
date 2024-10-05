@@ -1,4 +1,4 @@
-import bookmark from "../assets/bookmark.svg"
+import bookmark from "#assets/bookmark.svg"
 
 export const BookmarkBtn = () => {
   return (
