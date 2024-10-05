@@ -8,7 +8,7 @@ export const OtherPaintings: React.FC<OtherPaintingsProps> = ({ otherPaintings }
   return (
     <section className="other-paintings">
       {otherPaintings.map((p) => (
-        <PaintingShortInfo withImg={true} />
+        <PaintingShortInfo withImg={true} painting={p} />
       ))}
     </section>
   )

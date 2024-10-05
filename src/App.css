@@ -118,7 +118,9 @@ main {
   }
   div {
     margin-right: auto;
-    .painting-short-info__name {
+    .painting-short-info__name,
+    .painting-short-info__author,
+    .painting-short-info__status {
       width: 210px;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -151,6 +153,7 @@ main {
     justify-content: space-between;
     gap: 50px;
     flex-wrap: wrap;
+    min-height: 510px;
   }
   .pagination {
     margin-top: 20px;

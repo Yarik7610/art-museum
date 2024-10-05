@@ -18,7 +18,7 @@ export const PaintingCardSection: React.FC<PaintingsCardSectionProps> = ({
     <div className="painting-cards">
       <section className="painting-cards__section">
         {paintings.map((p) => (
-          <PaintingCard />
+          <PaintingCard {...p} key={p.id} />
         ))}
       </section>
       <Pagination totalPaintingsCount={totalPaintingsCount} currentPage={currentPage} setCurrentPage={setCurrentPage} />
