@@ -63,9 +63,9 @@ export const Home = () => {
   return (
     <>
       <h1 className="big-heading">
-        Let's find some <span className="">Art</span> here!
+        Let&apos;s find some <span className="">Art</span> here!
       </h1>
-      <Search query={query} setQuery={setQuery} />
+      <Search setQuery={setQuery} />
       <section className="home-section">
         <SectionHeading text1="Topics for you" text2="Our special gallery" />
         <PaintingCardSection

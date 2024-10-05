@@ -3,10 +3,10 @@ import { useCallback, useState } from "react"
 import { debounce } from "../utils/debounce"
 
 interface SearchProps {
-  query: string
   setQuery: React.Dispatch<React.SetStateAction<string>>
 }
-export const Search: React.FC<SearchProps> = ({ query, setQuery }) => {
+
+export const Search = ({ setQuery }: SearchProps) => {
   const [value, setValue] = useState("")
 
   const debouncedSetQuery = useCallback(

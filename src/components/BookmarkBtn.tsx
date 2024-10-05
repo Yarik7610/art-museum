@@ -6,7 +6,7 @@ interface BookmarkBtnProps {
   id: number
 }
 
-export const BookmarkBtn: React.FC<BookmarkBtnProps> = ({ id }) => {
+export const BookmarkBtn = ({ id }: BookmarkBtnProps) => {
   const [added, setAdded] = useState(false)
   return (
     <button className="bookmark-btn" onClick={() => setAdded(!added)}>

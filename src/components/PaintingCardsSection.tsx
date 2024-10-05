@@ -10,13 +10,13 @@ interface PaintingsCardSectionProps {
   totalPaintingsCount: number
   paintingsLoading: boolean
 }
-export const PaintingCardSection: React.FC<PaintingsCardSectionProps> = ({
+export const PaintingCardSection = ({
   paintings,
   currentPage,
   setCurrentPage,
   totalPaintingsCount,
   paintingsLoading
-}) => {
+}: PaintingsCardSectionProps) => {
   if (!paintingsLoading && totalPaintingsCount === 0)
     return <p className="not-found-message">No such paintings found</p>
   return (
