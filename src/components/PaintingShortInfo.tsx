@@ -4,7 +4,8 @@ import { BookmarkBtn } from "./BookmarkBtn"
 interface PaintingShortInfoProps {
   withImg: boolean
 }
-export const PaintingShortInfo: React.FC<PaintingShortInfoProps> = ({ withImg }) => {
+
+export const PaintingShortInfo = ({ withImg }: PaintingShortInfoProps) => {
   return (
     <article className={`painting-short-info ${!withImg ? "short" : ""}`}>
       {withImg && <img className="painting-short-info__image" src={fon} alt="Painting image"></img>}
