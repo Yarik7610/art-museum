@@ -7,7 +7,8 @@ interface PaintingShortInfoProps {
   withImg: boolean
   painting: Painting
 }
-export const PaintingShortInfo: React.FC<PaintingShortInfoProps> = ({ withImg, painting }) => {
+
+export const PaintingShortInfo = ({ withImg }: PaintingShortInfoProps) => {
   return (
     <article className={`painting-short-info ${!withImg ? "short" : ""}`}>
       {withImg && (

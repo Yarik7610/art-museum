@@ -5,9 +5,13 @@ interface PaginationProps {
   currentPage: number
   setCurrentPage: React.Dispatch<React.SetStateAction<number>>
 }
-export const Pagination: React.FC<PaginationProps> = ({ totalPaintingsCount, currentPage, setCurrentPage }) => {
-  let pagesCount = Math.ceil(totalPaintingsCount / PAGE_SIZE)
-  let pages = []
+export const Pagination: React.FC<PaginationProps> = ({
+  totalPaintingsCount,
+  currentPage,
+  setCurrentPage
+}: PaginationProps) => {
+  const pagesCount = Math.ceil(totalPaintingsCount / PAGE_SIZE)
+  const pages = []
 
   for (let i = 1; i <= pagesCount; i++) {
     pages.push(i)
