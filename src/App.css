@@ -1,6 +1,6 @@
 header,
 footer {
-                      height: 125px;
+                                        height: 125px;
   display: flex;
   align-items: center;
   justify-content: center;
