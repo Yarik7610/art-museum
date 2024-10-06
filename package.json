@@ -18,10 +18,10 @@
     "web-vitals": "^2.1.4"
   },
   "lint-staged": {
-    "*.{js, jsx,ts,tsx}": [
+    "*.{js,jsx,ts,tsx}": [
       "yarn lint"
     ],
-    "*.{json,js,ts,jsx,tsx,html}": [
+    "*.{json,js,ts,jsx,tsx,html,css}": [
       "yarn format"
     ]
   },
