@@ -1,0 +1,15 @@
+build/
+
+node_modules/
+
+yarn.lock
+package-lock.json
+
+*.min.js
+*.min.css
+
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
