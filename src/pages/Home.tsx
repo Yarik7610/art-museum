@@ -36,7 +36,7 @@ export const Home = () => {
         setPaintings(body.data as Painting[])
         setPaintingsLoading(false)
       } catch (e) {
-        throw e
+        console.error(e)
       }
     }
     fetchPaintings()
@@ -54,7 +54,7 @@ export const Home = () => {
         setOtherPaintings(body.data as Painting[])
         setOtherPaintingsLoading(false)
       } catch (e) {
-        throw e
+        console.error(e)
       }
     }
     fetchOtherPaintings()

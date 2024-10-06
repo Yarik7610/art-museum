@@ -7,6 +7,7 @@ interface BookmarkBtnProps {
 }
 
 export const BookmarkBtn = ({ id }: BookmarkBtnProps) => {
+  console.log(id)
   const [added, setAdded] = useState(false)
   return (
     <button className="bookmark-btn" onClick={() => setAdded(!added)}>
