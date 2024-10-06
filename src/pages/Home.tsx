@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import ErrorBoundary from "../components/ErrorBoundary"
 import { Loader } from "../components/Loader"
 import { OtherPaintings } from "../components/OtherPaintings"
 import { PaintingCardSection } from "../components/PaintingCardsSection"
@@ -23,6 +24,8 @@ export const Home = () => {
   const [totalPaintingsCount, setTotalPaintingsCount] = useState(0)
   const [paintingsLoading, setPaintingsLoading] = useState(true)
   const [otherPaintingsLoading, setOtherPaintingsLoading] = useState(true)
+  const [paintingsError, setPaintingsError] = useState(false)
+  const [otherPaintingsError, setOtherPaintingsError] = useState(false)
 
   useEffect(() => {
     const fetchPaintings = async () => {
@@ -34,9 +37,10 @@ export const Home = () => {
         const body = await response.json()
         setTotalPaintingsCount(body.pagination.total)
         setPaintings(body.data as Painting[])
+      } catch {
+        setPaintingsError(true)
+      } finally {
         setPaintingsLoading(false)
-      } catch (e) {
-        console.error(e)
       }
     }
     fetchPaintings()
@@ -52,9 +56,10 @@ export const Home = () => {
         )
         const body = await response.json()
         setOtherPaintings(body.data as Painting[])
+      } catch {
+        setOtherPaintingsError(true)
+      } finally {
         setOtherPaintingsLoading(false)
-      } catch (e) {
-        console.error(e)
       }
     }
     fetchOtherPaintings()
@@ -68,17 +73,26 @@ export const Home = () => {
       <Search setQuery={setQuery} />
       <section className="home-section">
         <SectionHeading text1="Topics for you" text2="Our special gallery" />
-        <PaintingCardSection
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-          totalPaintingsCount={totalPaintingsCount}
-          paintings={paintings}
-          paintingsLoading={paintingsLoading}
-        />
+        <ErrorBoundary>
+          <PaintingCardSection
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+            totalPaintingsCount={totalPaintingsCount}
+            paintings={paintings}
+            paintingsLoading={paintingsLoading}
+            paintingsError={paintingsError}
+          />
+        </ErrorBoundary>
       </section>
       <section className="home-section">
         <SectionHeading text1="Here some more" text2="Other works for you" />
-        {otherPaintingsLoading ? <Loader /> : <OtherPaintings otherPaintings={otherPaintings} />}
+        <ErrorBoundary>
+          {otherPaintingsLoading ? (
+            <Loader />
+          ) : (
+            <OtherPaintings otherPaintings={otherPaintings} otherPaintingsError={otherPaintingsError} />
+          )}
+        </ErrorBoundary>
       </section>
     </>
   )
