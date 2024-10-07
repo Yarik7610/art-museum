@@ -1,7 +1,7 @@
-import React from "react"
 import ReactDOM from "react-dom/client"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import App from "./App"
+import { FavouritePaintingsProvider } from "./contexts/FavouritePaintingsContext"
 import "./index.css"
 import { Favourites } from "./pages/Favourites"
 import { Home } from "./pages/Home"
@@ -33,9 +33,9 @@ const router = createBrowserRouter([
   }
 ])
 root.render(
-  <React.StrictMode>
+  <FavouritePaintingsProvider>
     <RouterProvider router={router} />
-  </React.StrictMode>
+  </FavouritePaintingsProvider>
 )
 
 // If you want to start measuring performance in your app, pass a function

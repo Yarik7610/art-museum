@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react"
 import ErrorBoundary from "../components/ErrorBoundary"
 import { Loader } from "../components/Loader"
-import { OtherPaintings } from "../components/OtherPaintings"
 import { PaintingCardSection } from "../components/PaintingCardsSection"
 import { Search } from "../components/Search"
 import { SectionHeading } from "../components/SectionHeading"
-import { OTHER_PAINTINGS_COUNT, PAGE_SIZE } from "../constans/constants"
+import { ShortPaitings } from "../components/ShortPaintings"
+import { OTHER_PAINTINGS_COUNT, PAGE_SIZE, RANDOM_PAGE_WITH_SIZE_NINE } from "../constans/constants"
 
 export interface Painting {
   artist_display: string
@@ -50,9 +50,7 @@ export const Home = () => {
   useEffect(() => {
     setOtherPaintingsLoading(true)
     setOtherPaintingsError(false)
-    if (!totalPaintingsPages) return
-    //divide on 3 because other paintings count = 9 that is 3 time bigger than PAGE_SIZE
-    const randomPage = Math.floor((Math.random() * totalPaintingsPages) / 3)
+    const randomPage = Math.floor(Math.random() * RANDOM_PAGE_WITH_SIZE_NINE)
     const fetchOtherPaintings = async () => {
       try {
         const response = await fetch(
@@ -67,7 +65,7 @@ export const Home = () => {
       }
     }
     fetchOtherPaintings()
-  }, [totalPaintingsPages])
+  }, [])
 
   return (
     <>
@@ -94,7 +92,7 @@ export const Home = () => {
           {otherPaintingsLoading ? (
             <Loader />
           ) : (
-            <OtherPaintings otherPaintings={otherPaintings} otherPaintingsError={otherPaintingsError} />
+            <ShortPaitings paintings={otherPaintings} error={otherPaintingsError} />
           )}
         </ErrorBoundary>
       </section>
