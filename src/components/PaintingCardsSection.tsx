@@ -7,7 +7,7 @@ interface PaintingsCardSectionProps {
   paintings: Painting[]
   currentPage: number
   setCurrentPage: React.Dispatch<React.SetStateAction<number>>
-  totalPaintingsCount: number
+  totalPaintingsPages: number
   paintingsLoading: boolean
   paintingsError: boolean
 }
@@ -15,13 +15,12 @@ export const PaintingCardSection = ({
   paintings,
   currentPage,
   setCurrentPage,
-  totalPaintingsCount,
+  totalPaintingsPages,
   paintingsLoading,
   paintingsError
 }: PaintingsCardSectionProps) => {
-  if (paintingsError) throw new Error("Can't render paintings")
-
-  if (!paintingsLoading && totalPaintingsCount === 0) return <p className="middle-message">No such paintings found</p>
+  if (paintingsError) throw new Error("Error fetching paintings")
+  if (!paintingsLoading && totalPaintingsPages === 0) return <p className="middle-message">No such paintings found</p>
 
   return (
     <div className="painting-cards">
@@ -36,7 +35,7 @@ export const PaintingCardSection = ({
       )}
       {!paintingsLoading && (
         <Pagination
-          totalPaintingsCount={totalPaintingsCount}
+          totalPaintingsPages={totalPaintingsPages}
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
         />

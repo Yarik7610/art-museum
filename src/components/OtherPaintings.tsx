@@ -6,7 +6,7 @@ interface OtherPaintingsProps {
   otherPaintingsError: boolean
 }
 export const OtherPaintings = ({ otherPaintings, otherPaintingsError }: OtherPaintingsProps) => {
-  if (otherPaintingsError) throw new Error("Can't render other paintings")
+  if (otherPaintingsError) throw new Error("Error fetching other paintings")
 
   return (
     <section className="other-paintings">

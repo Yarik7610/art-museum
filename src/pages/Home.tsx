@@ -21,7 +21,7 @@ export const Home = () => {
   const [paintings, setPaintings] = useState<Painting[]>([])
   const [otherPaintings, setOtherPaintings] = useState<Painting[]>([])
   const [currentPage, setCurrentPage] = useState(1)
-  const [totalPaintingsCount, setTotalPaintingsCount] = useState(0)
+  const [totalPaintingsPages, setTotalPaintingsPages] = useState(0)
   const [paintingsLoading, setPaintingsLoading] = useState(true)
   const [otherPaintingsLoading, setOtherPaintingsLoading] = useState(true)
   const [paintingsError, setPaintingsError] = useState(false)
@@ -36,7 +36,7 @@ export const Home = () => {
           `https://api.artic.edu/api/v1/artworks/search?q=${query}&fields=id,title,artist_display,date_start,date_end,image_id&limit=${PAGE_SIZE}&page=${currentPage}`
         )
         const body = await response.json()
-        setTotalPaintingsCount(body.pagination.total)
+        setTotalPaintingsPages(body.pagination.total_pages)
         setPaintings(body.data as Painting[])
       } catch {
         setPaintingsError(true)
@@ -50,7 +50,9 @@ export const Home = () => {
   useEffect(() => {
     setOtherPaintingsLoading(true)
     setOtherPaintingsError(false)
-    const randomPage = Math.floor(Math.random() * 10000)
+    if (!totalPaintingsPages) return
+    //divide on 3 because other paintings count = 9 that is 3 time bigger than PAGE_SIZE
+    const randomPage = Math.floor((Math.random() * totalPaintingsPages) / 3)
     const fetchOtherPaintings = async () => {
       try {
         const response = await fetch(
@@ -65,12 +67,12 @@ export const Home = () => {
       }
     }
     fetchOtherPaintings()
-  }, [])
+  }, [totalPaintingsPages])
 
   return (
     <>
       <h1 className="big-heading">
-        Let&apos;s find some <span className="">Art</span> here!
+        Let&apos;s find some <span>Art</span> here!
       </h1>
       <Search setQuery={setQuery} />
       <section className="home-section">
@@ -79,7 +81,7 @@ export const Home = () => {
           <PaintingCardSection
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}
-            totalPaintingsCount={totalPaintingsCount}
+            totalPaintingsPages={totalPaintingsPages}
             paintings={paintings}
             paintingsLoading={paintingsLoading}
             paintingsError={paintingsError}

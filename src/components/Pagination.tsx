@@ -1,27 +1,23 @@
-import { PAGE_SIZE } from "../constans/constants"
-
 interface PaginationProps {
-  totalPaintingsCount: number
+  totalPaintingsPages: number
   currentPage: number
   setCurrentPage: React.Dispatch<React.SetStateAction<number>>
 }
 export const Pagination: React.FC<PaginationProps> = ({
-  totalPaintingsCount,
+  totalPaintingsPages,
   currentPage,
   setCurrentPage
 }: PaginationProps) => {
-  const pagesCount = Math.ceil(totalPaintingsCount / PAGE_SIZE)
   const pages = []
-
-  for (let i = 1; i <= pagesCount; i++) {
+  for (let i = 1; i <= totalPaintingsPages; i++) {
     pages.push(i)
   }
 
   let slicedPages
   if (currentPage < 4) {
     slicedPages = pages.slice(0, 4)
-  } else if (currentPage > pagesCount - 3) {
-    slicedPages = pages.slice(pagesCount - 4, pagesCount)
+  } else if (currentPage > totalPaintingsPages - 3) {
+    slicedPages = pages.slice(totalPaintingsPages - 4, totalPaintingsPages)
   } else {
     slicedPages = pages.slice(currentPage - 2, currentPage + 2)
   }
@@ -46,7 +42,7 @@ export const Pagination: React.FC<PaginationProps> = ({
       ))}
       <button
         className="pagination__controller"
-        disabled={currentPage === pagesCount}
+        disabled={currentPage === totalPaintingsPages}
         onClick={() => setCurrentPage(currentPage + 1)}>
         Next
       </button>
