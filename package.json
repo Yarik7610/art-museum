@@ -25,12 +25,10 @@
   },
   "lint-staged": {
     "*.{ts,tsx}": [
-      "yarn lint",
-      "git add"
+      "yarn lint"
     ],
     "*.{json,mjs,ts,tsx,html,css}": [
-      "yarn format",
-      "git add"
+      "yarn format"
     ]
   },
   "scripts": {
