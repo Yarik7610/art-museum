@@ -89,6 +89,7 @@ main {
   padding: 110px 55px;
   margin-top: 125px;
   .main__content {
+    min-height: 50vh;
     display: flex;
     flex-direction: column;
     gap: 60px;
@@ -98,6 +99,13 @@ main {
     margin: 0 auto 0 auto;
   }
 }
+
+h2 {
+  color: #393939;
+  font-weight: 500;
+  font-size: 32px;
+}
+
 .painting-short-info {
   background-color: white;
   border: 1px solid #f0f1f1;
@@ -185,11 +193,6 @@ main {
   p {
     color: #e0a449;
   }
-  h2 {
-    color: #393939;
-    font-weight: 500;
-    font-size: 32px;
-  }
 }
 
 .pagination {
@@ -271,6 +274,56 @@ main {
   display: grid;
   grid-template-columns: repeat(3, 415px);
   gap: 15px;
+}
+
+.painting {
+  display: flex;
+  gap: 50px;
+  justify-content: space-between;
+  .painting__image {
+    width: 500px;
+    height: 570px;
+    position: relative;
+    .painting__image__img {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+    button {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+    }
+  }
+  .painting__article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .painting__article__main {
+      p,
+      h3 {
+        font-weight: 500;
+      }
+      h3 {
+        margin-top: 20px;
+        color: #e0a449;
+      }
+      p {
+        margin-top: 10px;
+      }
+    }
+    .painting__article__info {
+      ul {
+        margin-top: 20px;
+        line-height: 3;
+        li {
+          span {
+            color: #e0a449;
+          }
+        }
+      }
+    }
+  }
 }
 
 .loader {

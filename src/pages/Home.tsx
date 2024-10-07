@@ -30,6 +30,7 @@ export const Home = () => {
   useEffect(() => {
     const fetchPaintings = async () => {
       setPaintingsLoading(true)
+      setPaintingsError(false)
       try {
         const response = await fetch(
           `https://api.artic.edu/api/v1/artworks/search?q=${query}&fields=id,title,artist_display,date_start,date_end,image_id&limit=${PAGE_SIZE}&page=${currentPage}`
@@ -48,6 +49,7 @@ export const Home = () => {
 
   useEffect(() => {
     setOtherPaintingsLoading(true)
+    setOtherPaintingsError(false)
     const randomPage = Math.floor(Math.random() * 10000)
     const fetchOtherPaintings = async () => {
       try {
