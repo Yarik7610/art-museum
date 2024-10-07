@@ -19,24 +19,26 @@ export const PaintingSection = ({ painting, error }: PaintingSectionProps) => {
       </div>
       <article className="painting__article">
         <div className="painting__article__main">
-          <h2>Charles V, bust length, holding a sword, facing right</h2>
-          <h3>Giovanni Britto</h3>
-          <p>1535–45</p>
+          <h2>{painting.title}</h2>
+          <h3>{painting.artist_display}</h3>
+          <p>
+            {painting.date_start} {painting.date_start && "-"} {painting.date_end}
+          </p>
         </div>
         <div className="painting__article__info">
           <h2>Overview</h2>
           <ul>
             <li>
-              <span>Artist nationality</span>: German
+              <span>Place of origin</span>: {painting.place_of_origin}
             </li>
             <li>
-              <span>Dimensions sheet</span>: 19 3/8 × 13 11/16 in. (49.2 × 34.8 cm)
+              <span>Dimensions sheet</span>: {painting.dimensions}
             </li>
             <li>
-              <span>Credit Line</span>: Rogers Fund, 1917
+              <span>Credit Line</span>: {painting.credit_line}
             </li>
             <li>
-              <span>Repository</span>: Metropolitan Museum of Art, New York, NY
+              <span>Medium display</span>: {painting.medium_display}
             </li>
           </ul>
         </div>

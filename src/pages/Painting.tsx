@@ -5,7 +5,12 @@ import { Loader } from "../components/Loader"
 import { PaintingSection } from "../components/PaintingSection"
 import type { Painting as IPainting } from "./Home"
 
-export type ExtendedPainting = IPainting & {}
+export type ExtendedPainting = IPainting & {
+  credit_line: string
+  place_of_origin: string
+  dimensions: string
+  medium_display: string
+}
 
 export const Painting = () => {
   const { paintingId } = useParams()
@@ -18,7 +23,9 @@ export const Painting = () => {
       setLoading(true)
       setError(false)
       try {
-        const response = await fetch(`https://api.artic.edu/api/v1/artworks/${paintingId}`)
+        const response = await fetch(
+          `https://api.artic.edu/api/v1/artworks/${paintingId}?fields=id,title,artist_display,date_start,date_end,image_id,credit_line,place_of_origin,dimensions,medium_display`
+        )
         const body = await response.json()
         if (!body.data) {
           setError(true)
