@@ -16,21 +16,21 @@ export const Favourites = () => {
 
   useEffect(() => {
     const fetchPainting = async () => {
-      try {
-        setLoading(true)
-        setError(false)
-        for (const id of paintingsIds) {
+      setLoading(true)
+      setError(false)
+      const promises = paintingsIds.map(async (id) => {
+        try {
           const response = await fetch(
             `https://api.artic.edu/api/v1/artworks/${id}?fields=id,title,artist_display,date_start,date_end,image_id`
           )
           const body = await response.json()
           setPaintings((prev) => [...prev, body.data as Painting])
+        } catch {
+          setError(true)
         }
-      } catch {
-        setError(true)
-      } finally {
-        setLoading(false)
-      }
+      })
+      await Promise.all(promises)
+      setLoading(false)
     }
     fetchPainting()
   }, [])
