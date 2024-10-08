@@ -11,6 +11,7 @@ interface PaintingsCardSectionProps {
   paintingsLoading: boolean
   paintingsError: boolean
 }
+
 export const PaintingCardSection = ({
   paintings,
   currentPage,

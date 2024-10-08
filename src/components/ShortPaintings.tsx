@@ -5,6 +5,7 @@ interface ShortPaitingsProps {
   paintings: Painting[]
   error: boolean
 }
+
 export const ShortPaitings = ({ paintings, error }: ShortPaitingsProps) => {
   if (error) throw new Error("Error fetching paintings")
   if (paintings.length === 0) return <p className="middle-message">No paintings yet</p>

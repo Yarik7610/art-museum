@@ -3,11 +3,8 @@ interface PaginationProps {
   currentPage: number
   setCurrentPage: React.Dispatch<React.SetStateAction<number>>
 }
-export const Pagination: React.FC<PaginationProps> = ({
-  totalPaintingsPages,
-  currentPage,
-  setCurrentPage
-}: PaginationProps) => {
+
+export const Pagination = ({ totalPaintingsPages, currentPage, setCurrentPage }: PaginationProps) => {
   const pages = []
   for (let i = 1; i <= totalPaintingsPages; i++) {
     pages.push(i)

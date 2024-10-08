@@ -58,9 +58,9 @@ export const Search = ({ setQuery }: SearchProps) => {
     <div className="search">
       <form onSubmit={handleSubmit(onSubmit)}>
         <input {...register("value")} className="search__input" type="text" placeholder="Search Art, Artist, Work..." />
-        {errors?.value && <p className="error-message">{errors.value.message}</p>}
         <img src={search} alt="Search icon" />
       </form>
+      {errors?.value && <p className="error-message">{errors.value.message}</p>}
     </div>
   )
 }

@@ -6,6 +6,7 @@ interface ContextValues {
   removePaintingId: (id: number) => void
   hasId: (id: number) => boolean
 }
+
 const FavouritePaintingsContext = createContext<ContextValues | null>(null)
 
 export const FavouritePaintingsProvider = ({ children }: { children: React.ReactNode }) => {

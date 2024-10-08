@@ -4,6 +4,7 @@ import { PaintingShortInfo } from "./PaintingShortInfo"
 interface FavouritesPaintingsSectionProps {
   paintings: Painting[]
 }
+
 export const FavouritesPaintingsSection = ({ paintings }: FavouritesPaintingsSectionProps) => {
   return (
     <section>

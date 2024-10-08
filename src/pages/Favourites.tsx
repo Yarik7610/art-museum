@@ -40,7 +40,8 @@ export const Favourites = () => {
       <h1 className="big-heading">
         Here Are Your{" "}
         <p>
-          <img src={bookmarkOrange} alt="Bookmark icon"></img> Favourites
+          <img src={bookmarkOrange} alt="Bookmark icon"></img>
+          <span>Favourites</span>
         </p>
       </h1>{" "}
       <SectionHeading text1="Saved by you" text2="Your favourites list" />

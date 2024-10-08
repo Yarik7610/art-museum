@@ -120,7 +120,6 @@ h2 {
     width: 335px;
   }
   .painting-short-info__image {
-    display: block;
     color: black;
     width: 80px;
     height: 80px;
@@ -157,12 +156,12 @@ h2 {
 }
 .painting-cards {
   width: 100%;
+  min-height: 510px;
   .painting-cards__section {
     display: flex;
     justify-content: space-between;
     gap: 50px;
     flex-wrap: wrap;
-    min-height: 510px;
   }
   .pagination {
     margin-top: 20px;
@@ -173,8 +172,6 @@ h2 {
   width: 385px;
   max-height: 510px;
   .painting-card__image {
-    display: block;
-    object-fit: cover;
     width: 100%;
     height: 445px;
   }
@@ -250,6 +247,10 @@ h2 {
     color: #f17900;
   }
   p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     img {
       width: 40px;
       height: 40px;
@@ -260,7 +261,9 @@ h2 {
 .search {
   width: 100%;
   max-width: 760px;
-  position: relative;
+  form {
+    position: relative;
+  }
   .search__input {
     width: 100%;
     padding: 25px 60px 25px 15px;
@@ -269,7 +272,6 @@ h2 {
     font-size: 18px;
   }
   img {
-    display: block;
     position: absolute;
     right: 15px;
     top: 50%;
@@ -288,12 +290,11 @@ h2 {
   gap: 50px;
   justify-content: space-between;
   .painting__image {
-    width: 500px;
+    min-width: 500px;
+    max-width: 500px;
     height: 570px;
     position: relative;
     .painting__image__img {
-      object-fit: cover;
-      display: block;
       height: 100%;
       width: 100%;
     }
@@ -340,7 +341,6 @@ h2 {
   width: 200px;
   height: 200px;
   img {
-    display: block;
     width: 100%;
     height: 100%;
   }
@@ -351,7 +351,6 @@ h2 {
   width: 40px;
   height: 40px;
   img {
-    display: block;
     width: 100%;
     height: 100%;
   }
@@ -370,7 +369,6 @@ h2 {
     border: 1px solid #f17900;
   }
   img {
-    display: block;
     width: 24px;
     height: 24px;
   }
@@ -425,10 +423,9 @@ h2 {
   }
   .painting {
     .painting__image {
-      width: 100%;
-      .painting__image__img {
-        object-fit: cover;
-      }
+      min-width: 370px;
+      max-width: 370px;
+      height: 570px;
     }
   }
 }

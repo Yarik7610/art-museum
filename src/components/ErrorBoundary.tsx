@@ -3,6 +3,7 @@ import React from "react"
 interface Props {
   children: React.ReactNode
 }
+
 interface ErrorState {
   hasError: boolean
   error: Error | null
