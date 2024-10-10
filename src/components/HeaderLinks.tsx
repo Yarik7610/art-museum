@@ -1,6 +1,6 @@
-import bookmark from "#assets/bookmark.svg"
-import home from "#assets/home.svg"
 import { Link } from "react-router-dom"
+import bookmark from "../assets/bookmark.svg"
+import home from "../assets/home.svg"
 
 export const HeaderLinks = () => {
   return (

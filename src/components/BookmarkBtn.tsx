@@ -1,6 +1,6 @@
-import bookmark from "#assets/bookmark.svg"
-import crossOrange from "#assets/cross-orange.svg"
 import { useState } from "react"
+import bookmark from "../assets/bookmark.svg"
+import crossOrange from "../assets/cross-orange.svg"
 import { useFavouritePaintingsContext } from "../contexts/FavouritePaintingsContext"
 
 interface BookmarkBtnProps {

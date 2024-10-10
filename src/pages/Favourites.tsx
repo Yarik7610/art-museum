@@ -1,5 +1,5 @@
-import bookmarkOrange from "#assets/bookmark-orange.svg"
 import { useEffect, useState } from "react"
+import bookmarkOrange from "../assets/bookmark-orange.svg"
 import ErrorBoundary from "../components/ErrorBoundary"
 import { Loader } from "../components/Loader"
 import { SectionHeading } from "../components/SectionHeading"

@@ -1,9 +1,9 @@
-import search from "#assets/search.svg"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { useCallback, useEffect } from "react"
 import { SubmitHandler, useForm } from "react-hook-form"
 import * as yup from "yup"
 import { InferType } from "yup"
+import search from "../assets/search.svg"
 import { debounce } from "../utils/debounce"
 
 interface SearchProps {
